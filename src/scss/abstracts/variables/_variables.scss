@@ -1,0 +1,81 @@
+$mq-xs: 0 !default; // To match bootstrap
+$mq-vs: 30em !default; // 480px
+$mq-sm: 40em !default; // 640px
+$mq-md: 48em !default; // 768px
+$mq-lg: 64em !default; // 1024px
+$mq-xl: 75em !default; // 1200px
+$mq-xxl: 90em !default; // 1400px
+
+$font-sizes-mobile: (
+  'xxxlarge': (
+    'font-size': 2.6rem,
+    'line-height': 3.9rem,
+  ),
+  'xxlarge': (
+    'font-size': 2.4rem,
+    'line-height': 3.6rem,
+  ),
+  'xlarge': (
+    'font-size': 2rem,
+    'line-height': 3rem,
+  ),
+  'large': (
+    'font-size': 1.8rem,
+    'line-height': 2.7rem,
+  ),
+  'medium': (
+    'font-size': 1.6rem,
+    'line-height': 2.4rem,
+  ),
+  'small': (
+    'font-size': 1.4rem,
+    'line-height': 2.1rem,
+  ),
+  'xsmall': (
+    'font-size': 1.2rem,
+    'line-height': 1.8rem,
+  ),
+) !default;
+
+$font-sizes-desktop: (
+  'mega1': (
+    'font-size': 5rem,
+    'line-height': 7.5rem,
+  ),
+  'mega2': (
+    'font-size': 4.6rem,
+    'line-height': 6.9rem,
+  ),
+  'mega3': (
+    'font-size': 4rem,
+    'line-height': 6rem,
+  ),
+  'xxxlarge': (
+    'font-size': 3rem,
+    'line-height': 4.5rem,
+  ),
+  'xxlarge': (
+    'font-size': 2.4rem,
+    'line-height': 3.6rem,
+  ),
+  'xlarge': (
+    'font-size': 2.2rem,
+    'line-height': 3.3rem,
+  ),
+  'large': (
+    'font-size': 2rem,
+    'line-height': 3rem,
+  ),
+  'medium': (
+    'font-size': 1.8rem,
+    'line-height': 2.7rem,
+  ),
+  'small': (
+    'font-size': 1.6rem,
+    'line-height': 2.4rem,
+  ),
+  'xsmall': (
+    'font-size': 1.4rem,
+    'line-height': 2.1rem,
+  )
+) !default;

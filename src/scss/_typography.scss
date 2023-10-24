@@ -1,0 +1,154 @@
+@use '~/scss/abstracts/abstracts' as a;
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/variables/variables' as variables;
+@use '/src/scss/animations';
+
+body {
+  @include a.get-font-size('medium');
+
+  color: var(--c-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 1.2rem;
+  color: var(--c-secondary);
+  font-weight: var(--fw-semibold);
+}
+
+h1,
+.h1 {
+  @include a.get-font-size-mobile('xxxlarge');
+}
+
+h2,
+.h2 {
+  @include a.get-font-size('xxlarge');
+}
+
+h3,
+.h3 {
+  @include a.get-font-size('large');
+}
+
+.label {
+  @include a.get-font-size-mobile('medium');
+
+  font-weight: var(--fw-medium);
+}
+
+.label--sm {
+  @include a.get-font-size-mobile('small');
+
+  font-weight: var(--fw-medium);
+}
+
+.label--xs {
+  @include a.get-font-size-mobile('small');
+
+  font-weight: var(--fw-medium);
+}
+
+.intro {
+  @include a.get-font-size-mobile('xlarge');
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+}
+
+small {
+  @include a.get-font-size-mobile('small');
+}
+
+a {
+  transition: opacity var(--t-speed), text-decoration-color var(--t-speed);
+  color: var(--c-primary);
+  text-decoration-color: var(--c-primary-200);
+  text-underline-offset: 0.3rem;
+
+  &:hover {
+    // opacity: 0.8;
+    text-decoration-color: var(--c-primary-100);
+  }
+}
+
+.link-icon {
+  --link-icon-size: 2.6rem;
+  --link-svg-size-width: 0.6rem;
+  --link-svg-size-height: 1rem;
+
+  @include a.get-font-size-mobile('medium');
+
+  display: flex;
+  align-items: center;
+  color: var(--c-theme-background);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  gap: 1.2rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--link-icon-size);
+    height: var(--link-icon-size);
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: var(--c-theme-background);
+  }
+
+  svg {
+    width: var(--link-svg-size-width);
+    height: var(--link-svg-size-height);
+    fill: var(--c-white);
+  }
+
+  &:hover {
+    svg {
+      animation-name: linkanimation;
+      animation-duration: 0.4s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.link-icon--sm {
+  @include a.get-font-size-mobile('small');
+
+  gap: 0.6rem;
+
+  --link-icon-size: 2.2rem;
+}
+
+.link-icon--lg {
+  @include a.get-font-size-mobile('small');
+
+  --link-icon-size: 3.6rem;
+  --link-svg-size-width: 1.2rem;
+  --link-svg-size-height: 1.6rem;
+}
+
+::selection {
+  background-color: var(--c-primary);
+  color: var(--c-white);
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .label {
+    @include a.get-font-size-desktop('large');
+  }
+
+  .label--sm {
+    @include a.get-font-size-desktop('medium');
+  }
+
+  .intro {
+    @include a.get-font-size-desktop('xxlarge');
+
+    line-height: 4.2rem;
+  }
+}

@@ -1,0 +1,89 @@
+@use '~/scss/abstracts/abstracts' as a;
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/variables/variables' as variables;
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap';
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: var(--ff-primary);
+  font-size: 62.5%;
+  font-weight: var(--fw-regular);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  transition: background-color var(--t-speed) ease-in-out;
+  background-color: var(--c-body-bg);
+}
+
+main {
+  padding-top: 4.2rem;
+  background-color: var(--c-white-200);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  // Prevent chrome elastic scrolling bug, notiable on homepage
+  overscroll-behavior-y: none;
+}
+
+.html-nav-open,
+.html-overlay-open,
+.html-nav-open body,
+.html-overlay-open body {
+  position: fixed;
+  // height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+// Move once footer commited
+@include responsive.mq-min(variables.$mq-lg) {
+  main {
+    padding-top: 0;
+  }
+
+  main,
+  footer {
+    margin-left: var(--header-width);
+  }
+}

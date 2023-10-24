@@ -1,0 +1,118 @@
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/variables/variables' as variables;
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--c-theme-background);
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.swiper-button-next {
+  right: 0.4rem;
+  left: auto;
+
+  &::after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCSURBVHgBzZJBCgAgCAS3XuL/P1U/2RK8BrFCOSAIsnNQgQtIjiiDQoQpSzxUV9K82TODxux4SWoP/8IhSJ/v+MoL2y2jwJrCy/sAAAAASUVORK5CYII=');
+  }
+}
+
+.swiper-button-prev {
+  right: auto;
+  left: 0.4rem;
+
+  &::after {
+    content: '';
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCSURBVHgB1ZIxCgAwCAPTvsT/f6r9SarQobipSz3I4HCBgICDpGiWBVEemeECL9vdQFbG3SrIsSeqVCd8XoIM0Vc+VsmjwG0iMbwAAAAASUVORK5CYII=');
+  }
+}
+
+.swiper-pagination {
+  position: absolute;
+  z-index: 9;
+  transform: translate3d(0, 0, 0);
+  transition: 300ms opacity;
+  text-align: center;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.4rem;
+  margin-left: 0.4rem;
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: var(--theme-background);
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-hero {
+  overflow: visible !important;
+
+  .swiper-slide {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: opacity var(--t-speed);
+      opacity: 0.5;
+      background-color: var(--c-black);
+      inset: 0;
+    }
+  }
+
+  .swiper-slide.swiper-slide-active {
+    &::after {
+      content: '';
+      opacity: 0;
+    }
+  }
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+@include responsive.mq-min(variables.$mq-lg) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    top: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swiper-button-disabled {
+    display: none;
+  }
+}

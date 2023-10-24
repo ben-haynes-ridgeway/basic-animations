@@ -1,0 +1,76 @@
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+
+.main {
+  @include responsive.use-container();
+
+  height: 100dvh;
+  background: var(--anatomy-gray-100);
+}
+
+.card {
+  background-color: var(--anatomy-gray-200);
+  border: 1px solid var(--anatomy-gray-400);
+  color: var(--anatomy-gray-800);
+  padding:1rem;
+  border-radius: 4px;
+  margin-inline: auto;
+  // background: linear-gradient(to bottom, #57B2FF, #0086F8);
+  width: 80%;
+  // height:120px;
+  box-shadow: 0px 5px 20px 1px var(--anatomy-gray-500);
+}
+
+.btn, .input, .item {
+  // background-color: transparent;
+  border:1px solid var(--anatomy-gray-600);
+  border-radius: 6px;
+  padding-inline:1rem;
+  padding-block: 0.3rem;
+  // outline: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--anatomy-gray-800);
+}
+
+.item-list {
+  display:grid;
+  row-gap: 1rem;
+  margin-block: 1rem;
+}
+
+
+.item {
+  padding-block: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  &__text {
+    height:100%;
+
+  }
+
+  svg {
+    margin-top:-4px;
+    width:24px;
+    height:24px;
+    path {
+      stroke: var(--anatomy-gray-600);
+    }
+  }
+}
+
+.btn-secondary {
+  // background-color: transparent;
+  background-color: red;
+  border:1px solid var(--anatomy-gray-600);
+
+  &:hover {
+    background-color: var(--anatomy-gray-600);
+    outline: inherit;
+  }
+}
+
+.input {
+  width:100%;
+}

@@ -1,0 +1,29 @@
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/variables/variables' as variables;
+@use '~/scss/abstracts/abstracts' as a;
+
+.u__full-width {
+  width: 100vw;
+  margin-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+@include responsive.mq-max(variables.$mq-md) {
+  .u__full-width-mobile {
+    width: 100vw;
+    margin-inline-start: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@include responsive.mq-max(variables.$mq-lg) {
+  .u__hide-mobile-lg {
+    display: none;
+  }
+}
+
+@include responsive.mq-min(variables.$mq-lg) {
+  .u__hide-lg {
+    display: none;
+  }
+}

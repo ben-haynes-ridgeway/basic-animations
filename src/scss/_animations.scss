@@ -1,0 +1,6 @@
+@keyframes linkanimation {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(1.6rem); }
+  51% { transform: translateX(-1.6rem); }
+  100% { transform: translateX(0); }
+}

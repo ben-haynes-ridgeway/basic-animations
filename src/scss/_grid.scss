@@ -1,0 +1,26 @@
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/mixins/responsive' as variables;
+
+.container {
+  @include responsive.use-container;
+}
+
+.container-content {
+  max-width: 94rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+@include responsive.mq-min(variables.$mq-md) {
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 6rem;
+  }
+
+  .col-md-6 {
+    grid-column: span 6;
+  }
+} */

@@ -1,0 +1,36 @@
+// cant select all in folder. refactor once config is fixed
+@use '../variables/variables' as variables;
+@use 'responsive' as responsive;
+@use 'sass:map';
+
+@mixin get-font-size-desktop($size, $line-height: false) {
+  font-size: map.get(map.get(variables.$font-sizes-desktop, $size), 'font-size');
+
+  @if ($line-height) {
+    line-height: $line-height;
+  } @else {
+    line-height: map.get(map.get(variables.$font-sizes-desktop, $size), 'line-height');
+  }
+}
+
+@mixin get-font-size-mobile($size, $line-height: false) {
+  font-size: map.get(map.get(variables.$font-sizes-mobile, $size), 'font-size');
+
+  @if ($line-height) {
+    line-height: $line-height;
+  } @else {
+    line-height: map.get(map.get(variables.$font-sizes-mobile, $size), 'line-height');
+  }
+}
+
+@mixin get-font-size($size, $line-height-mobile: false, $line-height-desktop: false) {
+  @include get-font-size-mobile($size, $line-height-mobile);
+
+  @include responsive.mq-min(variables.$mq-md) {
+    @if ($line-height-desktop) {
+      @include get-font-size-desktop($size, $line-height-desktop);
+    } @else {
+      @include get-font-size-desktop($size, $line-height-mobile);
+    }
+  }
+}

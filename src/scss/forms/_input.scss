@@ -1,0 +1,38 @@
+@use '../abstracts/mixins/responsive' as responsive;
+@use '../abstracts/variables/variables' as variables;
+@use '~/scss/abstracts/abstracts' as a;
+
+.input-field {
+  margin-bottom: 3rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--f-semi-bold);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  border: 0.1rem solid var(--c-border-100);
+  outline: none;
+  box-shadow: none;
+  color: var(--c-body);
+
+  @include a.get-font-size-mobile('medium');
+}
+
+.input::placeholder {
+  color: var(--c-body);
+}
+
+.input:focus {
+  outline: Highlight solid 0.3rem;
+}
+
+.input[disabled] {
+  background: var(--c-secondary-200);
+  cursor: not-allowed;
+}

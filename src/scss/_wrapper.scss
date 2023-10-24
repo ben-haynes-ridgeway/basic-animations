@@ -1,0 +1,75 @@
+@use '/src/scss/abstracts/mixins/responsive' as responsive;
+@use '/src/scss/abstracts/variables/variables' as variables;
+
+.wrapper--xs {
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+}
+
+.wrapper,
+.wrapper--lg {
+  margin-top: var(--s-wrapper);
+  margin-bottom: var(--s-wrapper);
+}
+
+.wrapper-top {
+  margin-top: var(--s-wrapper);
+}
+
+// Wrapper Padding - used for coloured backgrounds containers
+
+.wrapper-padding,
+.wrapper-padding--small {
+  padding-top: var(--s-wrapper);
+  padding-bottom: var(--s-wrapper);
+}
+
+.wrapper-padding.no-padding-top {
+  padding-top: 0;
+}
+
+.wrapper-padding.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+// Background
+
+.wrapper-bg--white {
+  --link-arrow: var(--c-white-200);
+
+  background-color: var(--c-white);
+}
+
+@include responsive.mq-min(variables.$mq-md) {
+  .wrapper {
+    margin-top: var(--s-wrapper-md);
+    margin-bottom: var(--s-wrapper-md);
+  }
+
+  .wrapper-top {
+    margin-top: var(--s-wrapper-md);
+  }
+
+  .wrapper-top--lg {
+    margin-top: var(--s-wrapper-lg);
+  }
+
+  .wrapper-padding {
+    padding-top: var(--s-wrapper-md);
+    padding-bottom: var(--s-wrapper-md);
+  }
+
+  .wrapper--lg {
+    margin-top: var(--s-wrapper-lg);
+    margin-bottom: var(--s-wrapper-lg);
+  }
+
+  .wrapper-bottom--lg {
+    margin-bottom: var(--s-wrapper-lg);
+  }
+
+  .wrapper--xs {
+    margin-top: var(--s-wrapper);
+    margin-bottom: var(--s-wrapper);
+  }
+}
